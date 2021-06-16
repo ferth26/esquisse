@@ -49,15 +49,16 @@ esquisse_ui <- function(id,
         label = NULL,
         icon = icon("gear", class = "fa-lg"),
         class = "btn-sm",
-        title = "Configuraciones de pantalla"
-      ),
-      actionButton(
-        inputId = ns("close"),
-        label = NULL,
-        icon = icon("times", class = "fa-lg"),
-        class = "btn-sm",
-        title = "Cerrar ventana"
+        title = "Configuración de parámetros"
       )
+      # ,
+      # actionButton(
+      #   inputId = ns("close"),
+      #   label = NULL,
+      #   icon = icon("times", class = "fa-lg"),
+      #   class = "btn-sm",
+      #   title = "Cerrar ventana"
+      # )
     ),
     tags$div(
       class = "pull-left",

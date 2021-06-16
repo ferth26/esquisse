@@ -342,7 +342,7 @@ esquisse_server <- function(id,
       
       
       # Close addin
-      observeEvent(input$close, shiny::stopApp())
+      # observeEvent(input$close, shiny::stopApp())
       
       # Ouput of module (if used in Shiny)
       output_module <- reactiveValues(code_plot = NULL, code_filters = NULL, data = NULL)
