@@ -952,7 +952,7 @@ controls_code <- function(ns, insert_code = FALSE) {
       "Copiar al portapapeles", `data-clipboard-target` = paste0("#", ns("codeggplot"))
     ), tags$script("$(function() {new ClipboardJS('.btn-copy-code');});"),
     tags$br(),
-    tags$b("Code:"),
+    tags$b("Código:"),
     uiOutput(outputId = ns("code")),
     tags$textarea(id = ns("holderCode"), style = "display: none;"),
     if (insert_code) {

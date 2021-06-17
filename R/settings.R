@@ -6,7 +6,7 @@ modal_settings <- function(aesthetics = NULL, session = shiny::getDefaultReactiv
   ns <- session$ns
   modalDialog(
     title = tagList(
-      "Esquisse settings",
+      "Configuración de Esquisse",
       tags$button(
         icon("close"),
         class = "btn btn-default pull-right",
@@ -15,29 +15,29 @@ modal_settings <- function(aesthetics = NULL, session = shiny::getDefaultReactiv
       )
     ),
     tags$label(
-      "Select aesthetics to be used to build a graph:",
+      "Seleccione la estética (aesthetics) que se utilizará para crear un gráfico.:",
       `for` = ns("aesthetics"),
       class = "control-label"
     ),
     shinyWidgets::alert(
-      icon("info"), "Aesthetic mappings describe how variables in the data are mapped to visual properties (aesthetics) of geoms.",
+      icon("info"), "Las asignaciones estéticas describen cómo las variables de los datos se asignan a las propiedades visuales de las geoms.",
       status = "info"
     ),
     prettyCheckboxGroup(
       inputId = ns("aesthetics"),
       label = NULL,
       choiceNames = list(
-        tagList(tags$b("fill:"), "fill color for shapes"),
-        tagList(tags$b("color:"), "color points and lines"),
-        tagList(tags$b("size:"), "size of the points"),
-        tagList(tags$b("shape:"), "shape of the points"),
-        tagList(tags$b("weight:"), "frequency weights"),
-        tagList(tags$b("group:"), "identifies series of points with a grouping variable"),
-        tagList(tags$b("ymin:"), "used in ribbons charts with ymax to display an interval between two lines"),
-        tagList(tags$b("ymax:"), "used in ribbons charts with ymin to display an interval between two lines"),
-        tagList(tags$b("facet:"), "create small multiples"),
-        tagList(tags$b("facet row:"), "create small multiples by rows"),
-        tagList(tags$b("facet col:"), "create small multiples by columns")
+        tagList(tags$b("fill:"), "Relleno de color para formas"),
+        tagList(tags$b("color:"), "Color de puntos y líneas"),
+        tagList(tags$b("size:"), "Tamaño de los puntos"),
+        tagList(tags$b("shape:"), "Forma de los puntos"),
+        tagList(tags$b("weight:"), "Pesos de frecuencia"),
+        tagList(tags$b("group:"), "Identifica una serie de puntos con una variable de agrupación"),
+        tagList(tags$b("ymin:"), "Se utiliza en gráficos de cintas con ymax para mostrar un intervalo entre dos líneas"),
+        tagList(tags$b("ymax:"), "Se utiliza en gráficos de cintas con ymin para mostrar un intervalo entre dos líneas"),
+        tagList(tags$b("facet:"), "Divide un gráfico en una matriz de paneles"),
+        tagList(tags$b("facet row:"), "Divide un gráfico en varios paneles por fila"),
+        tagList(tags$b("facet col:"), "Divide un gráfico en varios paneles por columna")
       ),
       choiceValues = c("fill", "color", "size", "shape", "weight", "group", "ymin", "ymax", "facet", "facet_row", "facet_col"),
       selected = aesthetics %||% c("fill", "color", "size", "facet"),
