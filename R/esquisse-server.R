@@ -89,7 +89,7 @@ esquisse_server <- function(id,
         datamods::import_modal(
           id = ns("import-data"),
           from = import_from,
-          title = "Import data to create a graph"
+          title = "Importar datos para crear un gráfico"
         )
       }
       
@@ -98,7 +98,7 @@ esquisse_server <- function(id,
         datamods::import_modal(
           id = ns("import-data"),
           from = import_from,
-          title = "Import data to create a graph"
+          title = "Importar datos para crear un gráfico"
         )
       })
       
@@ -114,7 +114,7 @@ esquisse_server <- function(id,
         data <- controls_rv$data
         if (!is.data.frame(data)) {
           showNotification(
-            ui = "No data to display",
+            ui = "No hay información para mostrar",
             duration = 700,
             id = paste("esquisse", sample.int(1e6, 1), sep = "-"),
             type = "warning"

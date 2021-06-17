@@ -163,7 +163,7 @@ esquisseContainer <- function(width = "100%", height = "700px", fixed = FALSE) {
         )
       } else {
         stop(
-          "fixed must be ever a logical TRUE/FALSE or a vector of length 4 of valid CSS unit.",
+          "fixed debe ser siempre un TRUE/FALSE lógico o un vector de longitud 4 de una unidad CSS válida.",
           call. = FALSE
         )
       }

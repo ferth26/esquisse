@@ -34,7 +34,7 @@ save_ggplot_ui <- function(id) {
         inputId = ns("filename"),
         label = NULL,
         value = "export-plot",
-        placeholder = "Filename",
+        placeholder = "Nombre del archivo",
         icon = list("Filename:"),
         width = "100%"
       ),
@@ -54,13 +54,13 @@ save_ggplot_ui <- function(id) {
       ),
       actionButton(
         inputId = ns("update_preview"),
-        label = "Update Preview",
+        label = "Actualizar Vista previa",
         icon = icon("eye"),
         style = "margin-bottom: 15px;"
       )
     ),
     tags$div(
-      tags$b("Export format:"),
+      tags$b("Formato de exportación:"),
       tags$br(),
       downloadButton(outputId = ns("png"), label = "PNG", style = "width: 120px;"),
       downloadButton(outputId = ns("pdf"), label = "PDF", style = "width: 120px;"),
@@ -255,7 +255,7 @@ downloads_labels <- function(label = icon("download"),
                              svg = tagList(icon("chrome"), "SVG"),
                              jpeg = tagList(icon("file-image-o"), "JPEG"),
                              pptx = tagList(icon("file-powerpoint-o"), "PPTX"),
-                             more = tagList(icon("gear"), "More options")) {
+                             more = tagList(icon("gear"), "Mas opciones")) {
   list(
     label = label,
     png = png,
@@ -315,7 +315,7 @@ render_ggplot <- function(id,
             ), silent = TRUE)
             if ("try-error" %in% class(ppt)) {
               shiny::showNotification(
-                ui = "Export to PowerPoint failed...", 
+                ui = "Error al exportar a PowerPoint ...", 
                 type = "error", 
                 id = paste("esquisse", sample.int(1e6, 1), sep = "-")
               )
@@ -325,7 +325,7 @@ render_ggplot <- function(id,
               file.copy(from = tmp, to = file)
             }
           } else {
-            warn <- "Packages 'officer' and 'rvg' are required to use this functionality."
+            warn <- "Los paquetes 'officer' y 'rvg' son necesarios para utilizar esta funcionalidad."
             warning(warn, call. = FALSE)
             shiny::showNotification(
               ui = warn, 
@@ -344,7 +344,7 @@ render_ggplot <- function(id,
         hideDropMenu("exports_dropmenu")
         save_ggplot_modal(
           id = session$ns("export"),
-          title = "Export chart"
+          title = "Exportar gráfico"
         )
       })
       save_ggplot_server("export", plot_rv = rv)
