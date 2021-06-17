@@ -255,7 +255,7 @@ downloads_labels <- function(label = icon("download"),
                              svg = tagList(icon("chrome"), "SVG"),
                              jpeg = tagList(icon("file-image-o"), "JPEG"),
                              pptx = tagList(icon("file-powerpoint-o"), "PPTX"),
-                             more = tagList(icon("gear"), "Mas opciones")) {
+                             more = tagList(icon("gear"), "Más opciones")) {
   list(
     label = label,
     png = png,

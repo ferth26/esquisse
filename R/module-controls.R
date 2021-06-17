@@ -923,7 +923,7 @@ controls_params <- function(ns) {
     ),
     prettyToggle(
       inputId = ns("flip"),
-      label_on = "No",
+      label_on = "Sí",
       icon_on = icon("check"),
       status_on = "success",
       status_off = "danger",
