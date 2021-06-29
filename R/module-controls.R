@@ -763,12 +763,14 @@ controls_appearance <- function(ns) {
 #'
 controls_params <- function(ns) {
 
+  ####
   scales_trans <- c(
     "asn", "atanh", "boxcox", "exp", "identity",
     "log", "log10", "log1p", "log2", "logit",
     "probability", "probit", "reciprocal",
     "reverse", "sqrt"
   )
+  ####
 
   tagList(
     tags$div(
@@ -867,6 +869,7 @@ controls_params <- function(ns) {
         label = "Límites del eje X (vacío para ninguno):",
         value = c(NA, NA)
       ),
+      #####
       selectInput(
         inputId = ns("transX"),
         label = "X-Axis transform:",
@@ -874,6 +877,7 @@ controls_params <- function(ns) {
         choices = scales_trans,
         width = "100%"
       )
+      ####
     ),
     tags$div(
       id = ns("controls-scale-trans-y"), style = "display: none;",
@@ -882,6 +886,7 @@ controls_params <- function(ns) {
         label = "Límites del eje Y (vacío para ninguno):",
         value = c(NA, NA)
       ),
+      ####
       selectInput(
         inputId = ns("transY"),
         label = "Y-Axis transform:",
@@ -889,6 +894,7 @@ controls_params <- function(ns) {
         choices = scales_trans,
         width = "100%"
       )
+      ####
     ),
     tags$div(
       id = ns("controls-density"),
