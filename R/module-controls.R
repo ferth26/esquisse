@@ -854,16 +854,16 @@ controls_params <- function(ns) {
         inputId = ns("xlim"),
         label = "Límites del eje X (vacío para ninguno):",
         value = c(NA, NA)
-      )
-      #####
-      # selectInput(
-      #   inputId = ns("transX"),
-      #   label = "X-Axis transform:",
-      #   selected = "identity",
-      #   choices = scales_trans,
-      #   width = "100%"
-      # ) %>% shinyjs::hidden()
+      ),
       ####
+      selectInput(
+        inputId = ns("transX"),
+        label = "X-Axis transform:",
+        selected = "identity",
+        choices = scales_trans,
+        width = "100%"
+      )
+      ###
     ),
     tags$div(
       id = ns("controls-scale-trans-y"), style = "display: none;",
@@ -872,16 +872,16 @@ controls_params <- function(ns) {
         inputId = ns("ylim"),
         label = "Límites del eje Y (vacío para ninguno):",
         value = c(NA, NA)
+      ),
+      ###
+      selectInput(
+        inputId = ns("transY"),
+        label = "Y-Axis transform:",
+        selected = "identity",
+        choices = scales_trans,
+        width = "100%"
       )
-      ####
-      # selectInput(
-      #   inputId = ns("transY"),
-      #   label = "Y-Axis transform:",
-      #   selected = "identity",
-      #   choices = scales_trans,
-      #   width = "100%"
-      # ) %>% shinyjs::hidden()
-      ####
+      ###
     ),
     tags$div(
       id = ns("controls-density"),

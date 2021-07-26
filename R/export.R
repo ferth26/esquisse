@@ -227,11 +227,10 @@ ggplot_output <- function(id, width = "100%", height = "400px", downloads = down
         actionButton(
           inputId = ns("exports"),
           label = downloads$label,
-          class = "btn-sm"
-          #,
-          #style= "position: absolute; top: 0; right: 5px;"
+          class = "btn-sm",
+          style= "position: absolute; top: 0; right: 5px;"
         ),
-        #placement = "bottom-end",
+        placement = "bottom-end",
         dlBtn,
         if (!is.null(downloads$more)) tagList(
           tags$hr(style = "margin: 5px 0;"),
