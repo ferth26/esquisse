@@ -18,21 +18,6 @@ dropdown_ <- function(..., class = NULL) {
 }
 
 
-# htmltools::tagAppendAttributes(
-#   shinyWidgets::dropMenu(
-#     actionButton(
-#       inputId = "controls-appearance",
-#       label = "Appearance",
-#       icon = icon("palette"),
-#       class = "btn-esquisse-controls"
-#     ),
-#     controls_appearance(ns),
-#     placement = "top"
-#   ),
-#   class = "btn-group-esquisse"
-# )
-
-
 #' Controls menu
 #'
 #' @param id Module's ID. See \code{\link[shiny]{callModule}}.
@@ -567,7 +552,7 @@ labs_options_input <- function(inputId, label, placeholder, defaults = list()) {
       style = "width: 320px;",
       prettyRadioButtons(
         inputId = paste0(inputId, "_face"),
-        label = "Font face:",
+        label = "Formato de fuente:",
         choiceNames = c("Plain", "Italic", "Bold", "Bold/Italic"),
         choiceValues = c("plain", "italic", "bold", "bold.italic"),
         selected = defaults$face,
@@ -576,13 +561,13 @@ labs_options_input <- function(inputId, label, placeholder, defaults = list()) {
       ),
       numericInput(
         inputId = paste0(inputId, "_size"),
-        label = "Font size:",
+        label = "Tamaño de fuente:",
         value = defaults$size
       ),
       prettyRadioButtons(
         inputId = paste0(inputId, "_align"),
-        label = "Align:",
-        choiceNames = c("Left", "Center", "Right"),
+        label = "Alinear",
+        choiceNames = c("Izquierda", "Centrada", "Derecha"),
         choiceValues = c("left", "center", "right"),
         inline = TRUE,
         status = "primary",
@@ -864,36 +849,38 @@ controls_params <- function(ns) {
     ),
     tags$div(
       id = ns("controls-scale-trans-x"), style = "display: none;",
+      # new class: class = "input-group-text"
       numericRangeInput(
         inputId = ns("xlim"),
         label = "Límites del eje X (vacío para ninguno):",
         value = c(NA, NA)
-      ),
-      #####
-      selectInput(
-        inputId = ns("transX"),
-        label = "X-Axis transform:",
-        selected = "identity",
-        choices = scales_trans,
-        width = "100%"
       )
+      #####
+      # selectInput(
+      #   inputId = ns("transX"),
+      #   label = "X-Axis transform:",
+      #   selected = "identity",
+      #   choices = scales_trans,
+      #   width = "100%"
+      # ) %>% shinyjs::hidden()
       ####
     ),
     tags$div(
       id = ns("controls-scale-trans-y"), style = "display: none;",
+      # new class: class = "input-group-text"
       numericRangeInput(
         inputId = ns("ylim"),
         label = "Límites del eje Y (vacío para ninguno):",
         value = c(NA, NA)
-      ),
-      ####
-      selectInput(
-        inputId = ns("transY"),
-        label = "Y-Axis transform:",
-        selected = "identity",
-        choices = scales_trans,
-        width = "100%"
       )
+      ####
+      # selectInput(
+      #   inputId = ns("transY"),
+      #   label = "Y-Axis transform:",
+      #   selected = "identity",
+      #   choices = scales_trans,
+      #   width = "100%"
+      # ) %>% shinyjs::hidden()
       ####
     ),
     tags$div(

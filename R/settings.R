@@ -9,13 +9,13 @@ modal_settings <- function(aesthetics = NULL, session = shiny::getDefaultReactiv
       "Configuración de Esquisse",
       tags$button(
         icon("close"),
-        class = "btn btn-default pull-right",
+        class = "btn btn-default float-right",
         style = "border: 0 none;",
         `data-dismiss` = "modal"
       )
     ),
     tags$label(
-      "Seleccione la estética (aesthetics) que se utilizará para crear un gráfico.:",
+      tags$b("Seleccione la estética (aesthetics) que se utilizará para crear un gráfico.:"),
       `for` = ns("aesthetics"),
       class = "control-label"
     ),

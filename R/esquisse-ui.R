@@ -41,9 +41,9 @@ esquisse_ui <- function(id,
   ns <- NS(id)
   tag_header <- tags$div(
     class = "esquisse-title-container",
-    tags$h1("Esquisse", class = "esquisse-title"),
+    tags$h1("Gráficos Avanzados", class = "esquisse-title"),
     tags$div(
-      class = "pull-right",
+      class = "float-right",
       actionButton(
         inputId = ns("settings"),
         label = NULL,
@@ -51,17 +51,9 @@ esquisse_ui <- function(id,
         class = "btn-sm",
         title = "Configuración de parámetros"
       )
-      # ,
-      # actionButton(
-      #   inputId = ns("close"),
-      #   label = NULL,
-      #   icon = icon("times", class = "fa-lg"),
-      #   class = "btn-sm",
-      #   title = "Cerrar ventana"
-      # )
     ),
     tags$div(
-      class = "pull-left",
+      class = "float-left",
       actionButton(
         inputId = ns("launch_import_data"),
         label = NULL,
@@ -83,7 +75,6 @@ esquisse_ui <- function(id,
     class = "esquisse-container",
     html_dependency_esquisse(),
     html_dependency_clipboard(),
-    # shinyWidgets::chooseSliderSkin("Modern", "#112446"),
     
     if (isTRUE(header)) tag_header,
     
