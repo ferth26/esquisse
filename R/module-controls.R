@@ -880,7 +880,7 @@ controls_params <- function(ns) {
         selected = "identity",
         choices = scales_trans,
         width = "100%"
-      ) %>% shinyjs::disable()
+      )
       ###
     ),
     tags$div(
@@ -898,7 +898,7 @@ controls_params <- function(ns) {
         selected = "identity",
         choices = scales_trans,
         width = "100%"
-      ) %>% shinyjs::disable()
+      )
       ###
     ),
     tags$div(
