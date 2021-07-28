@@ -880,7 +880,7 @@ controls_params <- function(ns) {
         selected = "identity",
         choices = scales_trans,
         width = "100%"
-      )
+      ) %>% tagAppendAttributes(id = "select_delX")
       ###
     ),
     tags$div(
@@ -898,7 +898,7 @@ controls_params <- function(ns) {
         selected = "identity",
         choices = scales_trans,
         width = "100%"
-      )
+      ) %>% tagAppendAttributes(id = "select_delY")
       ###
     ),
     tags$div(
