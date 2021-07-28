@@ -733,6 +733,24 @@ controls_appearance <- function(ns) {
   )
 }
 
+#### Temporary solution ("input-group-addon" -> "input-group-text")
+
+numericRangeInputC <- function(inputId, label, value, width = NULL, separator = " a ") {
+  item <- shinyWidgets::numericRangeInput(
+    inputId = inputId, 
+    label = label, 
+    value = value, 
+    width = width,
+    separator = separator
+  )
+  
+  item$children[[2]]$children[[2]]$attribs$class <- "input-group-text"
+  
+  item
+}
+
+####
+
 
 
 #' Controls for parameters
@@ -805,7 +823,7 @@ controls_params <- function(ns) {
       id = ns("controls-facet"), style = "display: none;",
       prettyRadioButtons(
         inputId = ns("facet_scales"),
-        label = "Facet scales:",
+        label = "Escalas Facet:",
         inline = TRUE,
         status = "primary",
         choices = c("fixed", "free", "free_x", "free_y"),
@@ -814,13 +832,13 @@ controls_params <- function(ns) {
       ),
       sliderInput(
         inputId = ns("facet_ncol"),
-        label = "Facet ncol:",
+        label = "Número de columnas:",
         min = 0, max = 10,
         value = 0, step = 1
       ),
       sliderInput(
         inputId = ns("facet_nrow"),
-        label = "Facet nrow:",
+        label = "Número de filas:",
         min = 0, max = 10,
         value = 0, step = 1
       )
@@ -850,7 +868,7 @@ controls_params <- function(ns) {
     tags$div(
       id = ns("controls-scale-trans-x"), style = "display: none;",
       # new class: class = "input-group-text"
-      numericRangeInput(
+      numericRangeInputC(
         inputId = ns("xlim"),
         label = "Límites del eje X (vacío para ninguno):",
         value = c(NA, NA)
@@ -858,17 +876,17 @@ controls_params <- function(ns) {
       ####
       selectInput(
         inputId = ns("transX"),
-        label = "X-Axis transform:",
+        label = "Transformación en el eje X:",
         selected = "identity",
         choices = scales_trans,
         width = "100%"
-      )
+      ) %>% shinyjs::disable()
       ###
     ),
     tags$div(
       id = ns("controls-scale-trans-y"), style = "display: none;",
       # new class: class = "input-group-text"
-      numericRangeInput(
+      numericRangeInputC(
         inputId = ns("ylim"),
         label = "Límites del eje Y (vacío para ninguno):",
         value = c(NA, NA)
@@ -876,11 +894,11 @@ controls_params <- function(ns) {
       ###
       selectInput(
         inputId = ns("transY"),
-        label = "Y-Axis transform:",
+        label = "Transformación en el eje Y:",
         selected = "identity",
         choices = scales_trans,
         width = "100%"
-      )
+      ) %>% shinyjs::disable()
       ###
     ),
     tags$div(

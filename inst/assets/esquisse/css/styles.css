@@ -42,7 +42,7 @@
   color: white;
   text-align: center;
   font-size: 30px;
-  font-family: 'Annie Use Your Telescope', handwriting;
+  font-family: 'Annie Use Your Telescope', handwriting, serif;
 }
 
 .esquisse-title-container button.btn {
@@ -52,7 +52,7 @@
   color: #FFF;
   background: transparent;
   border: none;
-  margin: 7px 5px 0px 5px;
+  margin: 7px 5px 0 5px;
 }
 
 
@@ -64,8 +64,8 @@
   grid-template-columns: 90px 1fr; 
   -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
 }
 
 
@@ -110,8 +110,8 @@
   display: grid; 
   grid-template-columns: 1fr 40px; 
   grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
   width: 100%;
 }
 
@@ -134,7 +134,7 @@
 }
 
 .esquisse-controls-filters {
-  min-width: 350px;
+  min-width: 260px;
   max-height: 90vh;
   min-height: 30vh;
   padding-right: 5px;
